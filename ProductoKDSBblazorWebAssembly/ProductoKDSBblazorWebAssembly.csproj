@@ -7,25 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\PostPage.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.33" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.33" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\PostPage.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\PostPage.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\PostPage.razor" />
   </ItemGroup>
 
 </Project>
