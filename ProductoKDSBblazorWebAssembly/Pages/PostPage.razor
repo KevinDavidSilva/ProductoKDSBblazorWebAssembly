@@ -1,0 +1,57 @@
+﻿@page "/posts"
+@inject PostService postService
+
+<h3>Posts</h3>
+<h1>Agregar nuevo Post</h1>
+<EditForm Model="newPost" OnInvalidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group">
+            <label>Nombre</label>
+            <InputText @bind-Value="newPost.NombreKDSB" class="form-control"/>
+            <ValidationMessage For="@(() => newPost.NombreKDSB)"/>
+        </div>
+        <div class="form-group">
+            <label>Nombre</label>
+            <InputText @bind-Value="newPost.DescripcionKDSB" class="form-control"/>
+            <ValidationMessage For="@(() => newPost.DescripcionKDSB)" />
+        </div>
+        <div class="form-group">
+            <label>Nombre</label>
+            <InputText @bind-Value="newPost.Precio" class="form-control" />
+            <ValidationMessage For="@(() => newPost.Precio)" />
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Guardar Post</button>
+</EditForm>
+@if (posts == null)
+{
+    <p><em>Cargando....</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+             @foreach (var post in posts)
+             {
+                 <tr>
+                     <td>@post.NombreKDSB</td>
+                     <td>@post.DescripcionKDSB</td>
+                    <td>@post.Precio</td>
+                 </tr>
+             }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    private List<PostDTO> posts;
+}   
